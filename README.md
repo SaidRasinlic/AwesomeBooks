@@ -1,6 +1,6 @@
 # "Awesome books: plain JavaScript with objects"
 
-> Mobile and Desktop version of World Cup Qatar Conference. I've created home and about pages for this project.
+> This is a basic website that allows users to ADD and REMOVE books from a list.
 
 ![screenshot](./resources/img/) <hr/>
 ![screenshot](./resources/img/)
