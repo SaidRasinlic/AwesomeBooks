@@ -3,11 +3,10 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
-
 
 form {
   display: flex;
@@ -16,5 +15,4 @@ form {
 }
 
 form > * + * {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
