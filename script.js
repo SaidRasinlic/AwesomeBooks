@@ -1,68 +1,50 @@
-let books = [];
-const listSection = document.querySelector('.book-list');
+const bookList = document.querySelector('.book-list');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const theForm = document.querySelector('form');
+class Book {
+  constructor(title, author, id) {
+    this.title = title;
+    this.author = author;
+    this.id = id;
+  }
 
-function removeBook(bookitem, i) {
-  const bookBlock = document.getElementById(i);
-  books = books.filter((item) => item !== bookitem);
-  localStorage.setItem('bookInfo', JSON.stringify(books));
-  listSection.removeChild(bookBlock);
-}
+  addBook() {
+    Book.books.push(this);
+    localStorage.setItem('bookInfo', JSON.stringify(Book.books));
+  }
 
-function addBookitem(bookitem, i) {
-  const bookBlock = document.createElement('div');
-  bookBlock.classList.add('bookBlock');
-  bookBlock.id = i;
+  removeBook() {
+    const removeBookID = parseInt(this.id, 10);
+    let listSection = Book.books;
+    listSection = listSection.filter((element, index) => index !== removeBookID);
+    Book.books = listSection;
+    localStorage.setItem('bookInfo', JSON.stringify(listSection));
+    window.location.reload();
+  }
 
-  const removeBtn = document.createElement('button');
-  removeBtn.classList.add('remove-btn');
-  removeBtn.innerText = 'Remove';
-
-  const underLine = document.createElement('hr');
-
-  bookBlock.innerHTML = `<p class="book-title">${bookitem.title}</p>
-    <p class="book-Author">${bookitem.author}</p> `;
-  bookBlock.appendChild(removeBtn);
-  bookBlock.appendChild(underLine);
-  listSection.appendChild(bookBlock);
-
-  removeBtn.onclick = () => {
-    removeBook(bookitem, i);
-  };
-}
-
-function addBook(item) {
-  books.push({
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  });
-
-  localStorage.setItem('bookInfo', JSON.stringify(books));
-  bookTitle.value = '';
-  bookAuthor.value = '';
-  addBookitem(item, (books.length - 1));
-}
-
-function updateUI() {
-  if (localStorage.getItem('bookInfo')) {
-    books = JSON.parse(localStorage.getItem('bookInfo'));
-    books.forEach((bookitem, i) => {
-      addBookitem(bookitem, i);
+  static displayUI() {
+    let bookDIV = '';
+    Book.books = JSON.parse(localStorage.getItem('bookInfo'));
+    if (Book.books === null) {
+      Book.books = [];
+    }
+    Book.books.forEach((item, index) => {
+      bookDIV += `<div class="bookDIV">
+    <p class='button-info'>"${item.title}" by "${item.author}"</p>
+    <button type="button" class="remove-btn" id="${index}">Remove</button>
+    </div>`;
     });
-  } else {
-    localStorage.setItem('bookInfo', '');
-    books = [];
+    bookList.innerHTML = bookDIV;
   }
 }
-
-updateUI();
-
-theForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  addBook({
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  });
+theForm.addEventListener('submit', () => {
+  const newBook = new Book(bookTitle.value, bookAuthor.value);
+  newBook.addBook();
 });
+Book.displayUI();
+const removeButton = document.querySelectorAll('.remove-btn');
+removeButton.forEach((item) => item.addEventListener('click', function () {
+  const deleteBook = new Book(bookTitle.value, bookAuthor.value, this.id);
+  deleteBook.removeBook();
+}));

@@ -1,9 +1,9 @@
 # "Awesome books: plain JavaScript with objects"
 
-> This is a basic website that allows users to ADD and REMOVE books from a list.
+> This is a basic mobile & desktop website that allows users to ADD and REMOVE books from a list.
 
-![screenshot](./resources/img/) <hr/>
-![screenshot](./resources/img/)
+![screenshot](./Awesome-Books-Mobile.png) <hr/>
+![screenshot](./Awesome-Books-Desktop.png)
 
 Additional description about the project and its features.
 
@@ -32,11 +32,19 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Said Rasinlic**
 
-- GitHub: [@GitHub/SaidRasinlic](https://twitter.com/SaidRasinlic)
+- GitHub: [@GitHub/SaidRasinlic](https://github.com/SaidRasinlic)
 - Twitter: [@Twitter/SaidRasinlic](https://twitter.com/SaidRasinlic)
 - LinkedIn: [LinkedIn/SaidRasinlic](https://www.linkedin.com/in/saidrasinlic)
+
+👤 **Mehdi Rahal**
+
+ - GitHub: [@GitHub/Mehdi-Rh](https://github.com/Mehdi-Rh)
+ 
+ 👤 **Nicholas Mutale** https://github.com/Mutalenic
+ 
+ - GitHub: [@GitHub/Mutalenic](https://github.com/Mutalenic)
 
 ## 🤝 Contributing
 

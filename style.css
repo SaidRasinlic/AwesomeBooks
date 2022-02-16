@@ -8,12 +8,56 @@ html {
   box-sizing: inherit;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-list {
+  width: 50%;
+  border: solid 2px black;
+  border: solid;
+}
+
+.bookDIV {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+  align-items: center;
+  height: 1.5rem;
+  padding: 1rem;
+}
+
+.bookDIV:nth-child(odd) { background-color: rgb(170, 169, 169); }
+
+hr {
+  color: black;
+  width: 10%;
+  margin: 1rem;
+  border-top: solid black 2px;
+}
+
+.h-add {
+  margin-top: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-form > * + * {
-  margin-top: 10px;
+form > * {
+  border: solid black 2px;
+}
+
+.btn-submit {
+  align-self: flex-end;
+}
+
+button {
+  border: solid black 2px;
+  box-shadow: 3px 3px;
 }
