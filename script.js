@@ -1,48 +1,25 @@
-const listSection = document.querySelector('.book-list');
+const bookList = document.querySelector('.book-list');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const theForm = document.querySelector('form');
-
-class Books {
-  constructor () {
+class Book {  
+  constructor(title, author, id){
     this.title = title;
     this.author = author;
+    this.id = id;
   }
-
-  save() {
-    title = JSON.parse(bookTitle.value);
-    author = JSON.parse(bookAuthor.value);
+  addBook(){
+   Book.books.push(this);
+   localStorage.setItem('bookInfo',JSON.stringify(Book.books));
   }
-
-  store() {
-    let boolList = [];
-    boolList.push([title,author]);
+  removeBook(){
+    let removeBookID = parseInt(this.id, 10);
+    let listSection = Book.books;
+    listSection = listSection.filter((element, index) => {
+      return index !== removeBookID;
+    });
+    Book.books = listSection;
+    localStorage.setItem('bookInfo', JSON.stringify(listSection));
+    window.location.reload();
   }
-
-  show () {
-    let titleShow = JSON.stringify(title);
-    let authorShow = JSON.stringify(author);
-
-    const bookShow = document.createElement('ul');
-    bookShow.innerHTML = `
-      <li class="bookRow">
-        <p>"${titleShow}" by ${authorShow}</p>
-        <button id="remove">Remove</button>
-      </li>
-    `
-  }
-
-  remove () {
-    boolList = boolList.filter(item => )
-
-  }
-
 }
-
-let book = new Books;
-
-// Add book //
-// event listner =>  click on add : book.store; book.show
-
-// Remove a book //
-// event listner =>  click on remove : book.remove
