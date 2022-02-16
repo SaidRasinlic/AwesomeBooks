@@ -2,8 +2,8 @@
 
 > This is a basic website that allows users to ADD and REMOVE books from a list.
 
-![screenshot](./resources/img/) <hr/>
-![screenshot](./resources/img/)
+![screenshot](./Awesome-Books-Mobile.png) <hr/>
+![screenshot](./Awesome-Books-Desktop.png)
 
 Additional description about the project and its features.
 
