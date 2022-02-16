@@ -8,27 +8,12 @@ html {
   box-sizing: inherit;
 }
 
-.container{
+form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
 }
 
-.book-list{
-  width: 50%;
-  
-}
-
-.bookDIV{
-  display: flex;
-  justify-content: space-between;
-  flex-shrink: 1;
-  align-items: center; 
-
-}
-
-.button-info:nth-child(odd){
-  background-color: gray;
+form > * + * {
+  margin-top: 10px;
 }
