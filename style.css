@@ -8,6 +8,28 @@ html {
   box-sizing: inherit;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  margin-bottom: 150px;
+  padding: 0 20px;
+}
+
+
+.navbar-list{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.navbar, .navbar-list a {
+  text-decoration: none;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -32,12 +54,6 @@ html {
 
 .bookDIV:nth-child(odd) { background-color: rgb(170, 169, 169); }
 
-hr {
-  color: black;
-  width: 10%;
-  margin: 1rem;
-  border-top: solid black 2px;
-}
 
 .h-add {
   margin-top: 0;

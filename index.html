@@ -11,11 +11,21 @@
 
 <body>
 
- <div class="container">
-  <h2 class="book-list-header">All Awesome Books</h2>
-  <section class="book-list"></section>
-  <hr>
+ <header>
+  <nav class="navbar">
+   <a href="#">Awesome Books</a>
+   <ul class="navbar-list">
+    <li><a href="#">List</a></li>
+    <li><a href="#">Add new</a></li>
+    <li><a href="#">Contact</a></li>
+   </ul>
+  </nav>
 
+
+ </header>
+
+ <section class="book-list"></section>
+ <section class="container">
   <h2 class="h-add">Add a new book</h2>
   <form>
    <label for="title">
@@ -26,8 +36,8 @@
   </label>
    <button class="btn-submit" type="submit" value="Add"> Add</button>
   </form>
+ </section>
 
- </div>
  <script src="./script.js"></script>
 </body>
 
