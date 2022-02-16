@@ -22,7 +22,7 @@ class Book {
     localStorage.setItem('bookInfo', JSON.stringify(listSection));
     window.location.reload();
   }
-}
+
 
 static displayUI () {
   let bookDIV = '';
