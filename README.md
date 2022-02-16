@@ -1,6 +1,6 @@
 # "Awesome books: plain JavaScript with objects"
 
-> This is a basic website that allows users to ADD and REMOVE books from a list.
+> This is a basic mobile & desktop website that allows users to ADD and REMOVE books from a list.
 
 ![screenshot](./Awesome-Books-Mobile.png) <hr/>
 ![screenshot](./Awesome-Books-Desktop.png)
