@@ -8,36 +8,34 @@ html {
   box-sizing: inherit;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
-.book-list{
+.book-list {
   width: 50%;
   border: solid 2px black;
   border: solid;
 }
 
-.bookDIV{
+.bookDIV {
   display: flex;
   justify-content: space-between;
   flex-shrink: 1;
-  align-items: center; 
+  align-items: center;
   height: 1.5rem;
   padding: 1rem;
-
 }
 
-.bookDIV:nth-child(odd){ background-color: rgb(170, 169, 169); }
+.bookDIV:nth-child(odd) { background-color: rgb(170, 169, 169); }
 
 hr {
   color: black;
   width: 10%;
-  margin: 1rem; 
+  margin: 1rem;
   border-top: solid black 2px;
 }
 
@@ -63,4 +61,3 @@ button {
   border: solid black 2px;
   box-shadow: 3px 3px;
 }
-
