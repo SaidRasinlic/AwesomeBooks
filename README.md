@@ -2,7 +2,7 @@
 
 > This is a basic SPA (Single Page Application) which is created by JavaScript classes and manipulated by DOM elements and JavaScript events. Simple USER INTERFACE that allows user to ADD and REMOVE books.
 
-![screenshot](./img/Desktop-Awesome-Books.png/Awesome-Books-Mobile.png)
+![screenshot](./img/Desktop-Awesome-Books.png.png/Awesome-Books-Mobile.png)
 
 Additional description about the project and its features.
 
