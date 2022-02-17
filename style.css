@@ -69,7 +69,7 @@ body {
 
 #book-contact-section,
 #book-add-section,
-#book-list-section{
+#book-list-section {
   display: none;
 }
 
@@ -150,7 +150,7 @@ button {
   font-weight: bold;
 }
 
-button:hover{
+button:hover {
   background-color: rgba(114, 97, 97, 0.596);
 }
 
