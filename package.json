@@ -1,7 +1,7 @@
 {
-  "name": "awesomebooks_said",
+  "name": "awesomebooks",
   "version": "1.0.0",
-  "description": "> This is a basic website that allows users to ADD and REMOVE books from a list.",
+  "description": "> This is a basic mobile & desktop website that allows users to ADD and REMOVE books from a list.",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

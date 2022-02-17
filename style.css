@@ -8,18 +8,11 @@ html {
   box-sizing: inherit;
 }
 
-
-
-/* .navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid red;
-  margin: 20px 20px;
-} */
+#header {
+  margin: 0 20px;
+}
 
 html, body {
-  height:100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -35,6 +28,7 @@ html, body {
   align-items: center;
   height: 80px;
   border: 2px solid black;
+  margin: 20px 0;
   width: 100%;
 }
 
@@ -48,9 +42,12 @@ html, body {
   text-decoration: none;
   color: black; 
   font-size: 20px;
+  font-weight: bold;
 }
 
-
+#nav-header{
+  font-weight: bold;
+}
 
 .navbar .navbar-list li::after {
   content: '';
@@ -62,49 +59,19 @@ html, body {
   border-right: none;
 }
 
-/* 
-.book-list{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
-  margin: 50px auto;
-  width: 70%;
-}
-
-/*  */
-
-
-
-
 #date {
   display: flex;
   justify-content: flex-end;
-  margin: 20px 30px;
-}
-
-/* #header{
-  display: flex;
-  flex-direction: column;
-}
-
-#date {
-  align-self: flex-end;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid black;
-  padding: 0 20px;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .navbar a {
 text-decoration: none;
 }
 
-
-.navbar-list{
+.navbar-list {
   display: flex;
   list-style: none;
   justify-content: space-between;
@@ -114,7 +81,6 @@ text-decoration: none;
 .navbar, .navbar-list a {
   text-decoration: none;
 }
-
 
 .container {
   display: flex;
@@ -138,8 +104,9 @@ text-decoration: none;
   padding: 1rem;
 }
 
-.bookDIV:nth-child(odd) { background-color: rgb(170, 169, 169); }
-
+.bookDIV:nth-child(odd) { 
+  background-color: rgb(170, 169, 169);
+}
 
 .h-add {
   margin-top: 0;
@@ -162,9 +129,9 @@ form > * {
 button {
   border: solid black 2px;
   box-shadow: 3px 3px;
-} */
+}
 
-#book-contact-section, #book-add-section,#book-list-section{
+#book-contact-section, #book-add-section,#book-list-section {
   display: none;
 }
 
@@ -173,23 +140,20 @@ button {
   min-height: 100%;
   float:left;
   margin-bottom: 8rem;
-
+  width: 50%;
 }
 
 #book-contact-section {
   display: none;
   flex-direction: column;
   align-items: center;
-  /* margin: 50px auto; */
   font-weight: 700;
+  font-size: 20px;
 }
-
-
 
 .section.active {
   display: block !important;
 }
-
 
 #footer {
   position: fixed;
@@ -205,7 +169,11 @@ button {
   padding: 1rem;
   padding-left: 2rem;
   border: 2px solid black;
+  font-weight: bold;
+}
 
+#footer span{
+  font-style: italic;
 }
 
 #dateWrapper {
@@ -217,7 +185,6 @@ button {
  flex-direction: column;
  justify-content: center;
  align-items: center;
-
 }
 
 .section {
@@ -227,9 +194,9 @@ button {
   align-items: center;
 }
 
-#book-add-section{
+#book-add-section {
  flex-direction: column;
-width: 40%;
+ width: 40%;
 }
 
 #formSection{
@@ -250,6 +217,7 @@ width: 40%;
   width: 100%;
   padding: 5px;
   border: 2px solid black;
+  font-weight: bold;
 }
 
 h1 {
@@ -270,26 +238,28 @@ button {
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 5px black;
+  font-weight: bold;
 }
-button:hover{
-background-color: rgba(114, 97, 97, 0.596);
+
+button:hover {
+  background-color: rgba(114, 97, 97, 0.596);
 }
 
 #book-list-container {
   border: 2px solid black;
-
 }
+
 .bookDIV {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   font-weight: bold;
-} 
+}
 
 .bookDIV:nth-child(odd) {
   background-color: rgb(170, 169, 169);
-} 
+}
 
 .listBtn.active {
   color: blue;
