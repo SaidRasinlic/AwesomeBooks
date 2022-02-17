@@ -15,7 +15,7 @@
   <nav class="navbar">
    <a href="#">Awesome Books</a>
    <ul class="navbar-list">
-    <li id="list"><a class="listBtn" href="#book-list-section">List </a></li>
+    <li class="test"><a class="listBtn" href="#book-list-section">List </a></li>
     <li id="new"><a class="listBtn" href="#book-add-section">Add New</a></li>
     <li id="contact"><a class="listBtn" href="#book-contact-section">Contact</a></li>
    </ul>
@@ -30,12 +30,14 @@
   <div class="flex-container">
    <section class="section active" id="book-list-section">
     <h1 class="pageTitle">All awesome books</h1>
-    <section class="book-list"></section>
+    <div id="book-list-container">
+     <section class="book-list"></section>
+    </div>
    </section>
 
    <section class="section" id="book-add-section">
     <h1 class="h-add">Add a new book</h1>
-    <form>
+    <form id="formSection">
      <label for="title">
   <input type="text" id="title" placeholder="Title" required>
   </label>
@@ -50,13 +52,12 @@
     <h1>Contact Information</h1>
     <div>
      <p>Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
-
     </div>
 
     <ul id="contact-list">
-     <li>- Our email: micronauts@microverse.com</li>
-     <li>- Our phone number : 11117770999</li>
-     <li>- Our address : Microverse 23, 53215 Microcity, Microland.</li>
+     <li>Our email: micronauts@microverse.com</li>
+     <li>Our phone number : 11117770999</li>
+     <li>Our address : Microverse 23, 53215 Microcity, Microland.</li>
     </ul>
    </section>
   </div>

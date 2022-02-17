@@ -35,7 +35,7 @@ html {
 
 .navbar a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
   font-size: 20px;
 }
 .navbar .navbar-list li::after {
@@ -54,18 +54,9 @@ html {
 }
 
 /*  */
-.bookDIV {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  font-weight: bold;
-} */
 
 
-/* .bookDIV:nth-child(odd) {
-  background-color: rgb(170, 169, 169);
-} */
+
 
 #date {
   display: flex;
@@ -163,7 +154,7 @@ button {
   display: none;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto;
+  /* margin: 50px auto; */
   font-weight: 700;
 }
 
@@ -195,4 +186,79 @@ button {
  flex-direction: column;
  justify-content: center;
  align-items: center;
+
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#book-add-section{
+ flex-direction: column;
+width: 40%;
+}
+
+#formSection{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#formSection button {
+  width: fit-content;
+  align-self: flex-end;
+  width: fit-content;
+  font-size: 18px;
+  padding: 5px;
+}
+
+#formSection input {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 5rem;
+}
+
+#formSection input {
+  font-size: 18px;
+}
+
+#dateWrapper {
+  padding: 0;
+}
+
+button {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px black;
+}
+button:hover{
+background-color: rgba(114, 97, 97, 0.596);
+}
+
+#book-list-container {
+  border: 2px solid black;
+
+}
+.bookDIV {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+} 
+
+.bookDIV:nth-child(odd) {
+  background-color: rgb(170, 169, 169);
+} 
+.listBtn  {
+  color:red;
 }
