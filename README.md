@@ -1,9 +1,8 @@
 # "Awesome books: plain JavaScript with objects"
 
-> This is a basic mobile & desktop website that allows users to ADD and REMOVE books from a list.
+> This is a basic SPA (Single Page Application) which is created by JavaScript classes and manipulated by DOM elements and JavaScript events. Simple USER INTERFACE that allows user to ADD and REMOVE books.
 
-![screenshot](./Awesome-Books-Mobile.png) <hr/>
-![screenshot](./Awesome-Books-Desktop.png)
+![screenshot](./img/Desktop-Awesome-Books.png)
 
 Additional description about the project and its features.
 

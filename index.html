@@ -11,23 +11,62 @@
 
 <body>
 
- <div class="container">
-  <h2 class="book-list-header">All Awesome Books</h2>
-  <section class="book-list"></section>
-  <hr>
+ <header id="header">
+  <nav class="navbar">
+   <a href="#" id="nav-header">Awesome Books</a>
+   <ul class="navbar-list">
+    <li class="test"><a class="listBtn active" href="#book-list-section">List </a></li>
+    <li id="new"><a class="listBtn" href="#book-add-section">Add New</a></li>
+    <li id="contact"><a class="listBtn" href="#book-contact-section">Contact</a></li>
+   </ul>
+  </nav>
+ </header>
 
-  <h2 class="h-add">Add a new book</h2>
-  <form>
-   <label for="title">
+ <main>
+  <div id="dateWrapper">
+   <p id="date"></p>
+  </div>
+
+  <div class="flex-container">
+   <section class="section active" id="book-list-section">
+    <h1 class="pageTitle">All awesome books</h1>
+    <div id="book-list-container">
+     <section class="book-list"></section>
+    </div>
+   </section>
+
+   <section class="section" id="book-add-section">
+    <h1 class="h-add">Add a new book</h1>
+    <form id="formSection">
+     <label for="title">
   <input type="text" id="title" placeholder="Title" required>
   </label>
-   <label for="author">
+     <label for="author">
    <input type="text" id="author" placeholder="Author" required>
   </label>
-   <button class="btn-submit" type="submit" value="Add"> Add</button>
-  </form>
+     <button class="btn-submit" type="submit" value="Add"> Add</button>
+    </form>
+   </section>
 
- </div>
+   <section class="section" id="book-contact-section">
+    <h1>Contact Information</h1>
+    <div>
+     <p>Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
+    </div>
+
+    <ul id="contact-list">
+     <li>Our email: micronauts@microverse.com</li>
+     <li>Our phone number : 11117770999</li>
+     <li>Our address : Microverse 23, 53215 Microcity, Microland.</li>
+    </ul>
+   </section>
+  </div>
+ </main>
+
+ <footer id="footer">
+  <p>Copyright &copy; <span>Said Rašinlić, Mehdi Rahul &amp; Nicholas Mutale</span></p>
+ </footer>
+
  <script src="./script.js"></script>
 </body>
 
