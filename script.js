@@ -68,7 +68,7 @@ class Book {
     localStorage.setItem('bookInfo', JSON.stringify(Book.books));
   }
 
-  removeBook() {
+  removeBook() {book-contact-sectionactive
     const removeBookID = parseInt(this.id, 10);
     let listSection = Book.books;
     listSection = listSection.filter((element, index) => index !== removeBookID);
@@ -126,6 +126,10 @@ setInterval(time, 1000);
 
 listBtn.forEach((btn, i) => {
   btn.onclick = () => {
+    listBtn.forEach(oldBtn => {
+      oldBtn.classList.remove('active');
+    });
+    btn.classList.add('active');
     addActive.forEach((sec, index) => {
       if (i === index) {
         sec.classList.add('active');
@@ -135,6 +139,13 @@ listBtn.forEach((btn, i) => {
     });
   };
 });
+
+// listBtn.forEach((btn, i) => {
+//   btn.onclick = () => {
+
+//   }
+// });
+
 
 
 // const section1 = document.querySelector('#book-list-section');

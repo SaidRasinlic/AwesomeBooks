@@ -8,6 +8,8 @@ html {
   box-sizing: inherit;
 }
 
+
+
 /* .navbar {
   display: flex;
   justify-content: space-around;
@@ -16,15 +18,24 @@ html {
   margin: 20px 20px;
 } */
 
+html, body {
+  height:100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 
 .navbar {
   display: flex;
   box-sizing: border-box;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 3rem;
   align-items: center;
   height: 80px;
-  margin: 20px 30px;
   border: 2px solid black;
+  width: 100%;
 }
 
 .navbar-list {
@@ -35,13 +46,20 @@ html {
 
 .navbar a {
   text-decoration: none;
-  /* color: black; */
+  color: black; 
   font-size: 20px;
 }
+
+
+
 .navbar .navbar-list li::after {
   content: '';
   border-right: 2px solid black;
   margin: 10px;
+}
+
+.navbar .navbar-list li#contact::after {
+  border-right: none;
 }
 
 /* 
@@ -150,6 +168,14 @@ button {
   display: none;
 }
 
+#book-list-section {
+  position: relative;
+  min-height: 100%;
+  float:left;
+  margin-bottom: 8rem;
+
+}
+
 #book-contact-section {
   display: none;
   flex-direction: column;
@@ -160,21 +186,26 @@ button {
 
 
 
-.active {
+.section.active {
   display: block !important;
 }
 
 
 #footer {
-  position: absolute;
-  left: 0;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  margin: 20px 20px;
+  background-color: white;
+}
+
+#footer p {
+  margin: 0 20px 20px;
   color: black;
   font-size: 20px;
-  padding-left: 250px;
+  padding: 1rem;
+  padding-left: 2rem;
   border: 2px solid black;
+
 }
 
 #dateWrapper {
@@ -259,6 +290,7 @@ background-color: rgba(114, 97, 97, 0.596);
 .bookDIV:nth-child(odd) {
   background-color: rgb(170, 169, 169);
 } 
-.listBtn  {
-  color:red;
+
+.listBtn.active {
+  color: blue;
 }
