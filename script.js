@@ -41,7 +41,7 @@
 // theForm.addEventListener('submit', () => {
 //   const newBook = new Book(bookTitle.value, bookAuthor.value);
 //   newBook.addBook();
-  
+
 // });
 // Book.displayUI();
 // const removeButton = document.querySelectorAll('.remove-btn');
@@ -55,7 +55,7 @@ const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const theForm = document.querySelector('form');
 const listBtn = document.querySelectorAll('.listBtn');
-const addActive= document.querySelectorAll('.section');
+const addActive = document.querySelectorAll('.section');
 class Book {
   constructor(title, author, id) {
     this.title = title;
@@ -68,7 +68,7 @@ class Book {
     localStorage.setItem('bookInfo', JSON.stringify(Book.books));
   }
 
-  removeBook() {book-contact-sectionactive
+  removeBook() { 
     const removeBookID = parseInt(this.id, 10);
     let listSection = Book.books;
     listSection = listSection.filter((element, index) => index !== removeBookID);
@@ -130,6 +130,7 @@ listBtn.forEach((btn, i) => {
       oldBtn.classList.remove('active');
     });
     btn.classList.add('active');
+
     addActive.forEach((sec, index) => {
       if (i === index) {
         sec.classList.add('active');
