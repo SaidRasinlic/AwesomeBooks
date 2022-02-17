@@ -49,6 +49,8 @@ html, body {
   font-weight: bold;
 }
 
+
+
 .navbar .navbar-list li::after {
   content: '';
   border-right: 2px solid black;
@@ -67,71 +69,7 @@ html, body {
   font-size: 20px;
 }
 
-.navbar a {
-text-decoration: none;
-}
-
-.navbar-list {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  width: 20%;
-}
-
-.navbar, .navbar-list a {
-  text-decoration: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.book-list {
-  width: 50%;
-  border: solid 2px black;
-  border: solid;
-}
-
-.bookDIV {
-  display: flex;
-  justify-content: space-between;
-  flex-shrink: 1;
-  align-items: center;
-  height: 1.5rem;
-  padding: 1rem;
-}
-
-.bookDIV:nth-child(odd) { 
-  background-color: rgb(170, 169, 169);
-}
-
-.h-add {
-  margin-top: 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-form > * {
-  border: solid black 2px;
-}
-
-.btn-submit {
-  align-self: flex-end;
-}
-
-button {
-  border: solid black 2px;
-  box-shadow: 3px 3px;
-}
-
-#book-contact-section, #book-add-section,#book-list-section {
+#book-contact-section, #book-add-section,#book-list-section{
   display: none;
 }
 
@@ -172,7 +110,7 @@ button {
   font-weight: bold;
 }
 
-#footer span{
+#footer span {
   font-style: italic;
 }
 
@@ -194,7 +132,7 @@ button {
   align-items: center;
 }
 
-#book-add-section {
+#book-add-section{
  flex-direction: column;
  width: 40%;
 }
@@ -240,26 +178,25 @@ button {
   box-shadow: 5px 5px black;
   font-weight: bold;
 }
-
-button:hover {
-  background-color: rgba(114, 97, 97, 0.596);
+button:hover{
+background-color: rgba(114, 97, 97, 0.596);
 }
 
 #book-list-container {
   border: 2px solid black;
-}
 
+}
 .bookDIV {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   font-weight: bold;
-}
+} 
 
 .bookDIV:nth-child(odd) {
   background-color: rgb(170, 169, 169);
-}
+} 
 
 .listBtn.active {
   color: blue;
