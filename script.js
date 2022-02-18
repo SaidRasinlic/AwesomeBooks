@@ -51,6 +51,10 @@ removeButton.forEach((item) => item.addEventListener('click', function () {
   deleteBook.removeBook();
 }));
 
+function updateDiv() {
+  $( ".book-list" ).load(window.location.href + " .book-list" );
+}
+
 const timeBox = document.querySelector('#date');
 
 function time() {
