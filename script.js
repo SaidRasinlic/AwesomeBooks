@@ -14,6 +14,7 @@ class Book {
   addBook() {
     Book.books.push(this);
     localStorage.setItem('bookInfo', JSON.stringify(Book.books));
+    Book.displayUI();
   }
 
   removeBook() {
@@ -43,6 +44,8 @@ class Book {
 theForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
   newBook.addBook();
+  bookAuthor.value = '';
+  bookTitle.value = '';
 });
 Book.displayUI();
 const removeButton = document.querySelectorAll('.remove-btn');
