@@ -55,6 +55,7 @@ const removeButton = document.querySelectorAll('.remove-btn');
 removeButton.forEach((item) => item.addEventListener('click', function () {
   const deleteBook = new Book(bookTitle.value, bookAuthor.value, this.id);
   deleteBook.removeBook();
+  Book.displayUI();
 }));
 
 const timeBox = document.querySelector('#date');
