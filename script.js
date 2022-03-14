@@ -23,7 +23,7 @@ class Book {
     listSection = listSection.filter((element, index) => index !== removeBookID);
     Book.books = listSection;
     localStorage.setItem('bookInfo', JSON.stringify(listSection));
-    window.location.reload();
+    Book.displayUI();
   }
 
   static displayUI() {
@@ -55,7 +55,6 @@ const removeButton = document.querySelectorAll('.remove-btn');
 removeButton.forEach((item) => item.addEventListener('click', function () {
   const deleteBook = new Book(bookTitle.value, bookAuthor.value, this.id);
   deleteBook.removeBook();
-  window.location.reload();
 }));
 
 const timeBox = document.querySelector('#date');
