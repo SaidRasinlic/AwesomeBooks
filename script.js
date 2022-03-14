@@ -47,11 +47,15 @@ theForm.addEventListener('submit', () => {
   bookAuthor.value = '';
   bookTitle.value = '';
 });
+
 Book.displayUI();
+
 const removeButton = document.querySelectorAll('.remove-btn');
+
 removeButton.forEach((item) => item.addEventListener('click', function () {
   const deleteBook = new Book(bookTitle.value, bookAuthor.value, this.id);
   deleteBook.removeBook();
+  window.location.reload();
 }));
 
 const timeBox = document.querySelector('#date');
