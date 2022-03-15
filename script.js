@@ -1,89 +1,88 @@
-const bookList = document.querySelector('.book-list');
-const bookTitle = document.querySelector('#title');
-const bookAuthor = document.querySelector('#author');
-const theForm = document.querySelector('form');
-const listBtn = document.querySelectorAll('.listBtn');
-const addActive = document.querySelectorAll('.section');
-class Book {
-  constructor(title, author, id) {
+let books;
+
+class UpdateDisplay {
+  
+  constructor(author, title) {
     this.title = title;
     this.author = author;
-    this.id = id;
   }
 
-  addBook() {
-    Book.books.push(this);
-    localStorage.setItem('bookInfo', JSON.stringify(Book.books));
-    Book.displayUI();
-  }
+  static listSection = document.querySelector('.book-list');
 
-  removeBook() {
-    const removeBookID = parseInt(this.id, 10);
-    let listSection = Book.books;
-    listSection = listSection.filter((element, index) => index !== removeBookID);
-    Book.books = listSection;
-    localStorage.setItem('bookInfo', JSON.stringify(listSection));
-    Book.displayUI();
-  }
+  static bookTitle = document.querySelector('#title');
 
-  static displayUI() {
-    let bookDIV = '';
-    Book.books = JSON.parse(localStorage.getItem('bookInfo'));
-    if (Book.books === null) {
-      Book.books = [];
+  static formBtn = document.querySelector('.btn-submit');
+
+  static bookAuthor = document.querySelector('#author');
+
+  static listBtn = document.querySelectorAll('.listBtn');
+
+  static addActive= document.querySelectorAll('.section');
+
+  static addBooks() {
+    const bookItem = new UpdateDisplay(
+      UpdateDisplay.bookTitle.value,
+      UpdateDisplay.bookAuthor.value,
+    );
+
+    if(UpdateDisplay.bookTitle.value && UpdateDisplay.bookAuthor.value != '') {
+      books.push(bookItem);
+      localStorage.setItem('books', JSON.stringify(books));
+  
+      UpdateDisplay.bookAuthor.value = '';
+      UpdateDisplay.bookTitle.value = '';
+      UpdateDisplay.addBookItem(bookItem, books.length - 1);
     }
-    Book.books.forEach((item, index) => {
-      bookDIV += `<div class="bookDIV">
-    <p class='button-info'>"${item.title}" by "${item.author}"</p>
-    <button type="button" class="remove-btn" id="${index}">Remove</button>
-    </div>`;
-    });
-    bookList.innerHTML = bookDIV;
+  }
+
+  static delBook(bookItem, pos) {
+    const bookBlock = document.getElementById(pos);
+    books = books.filter((item) => item !== bookItem);
+    localStorage.setItem('books', JSON.stringify(books));
+    UpdateDisplay.listSection.removeChild(bookBlock);
+  }
+
+  static updateUi() {
+    if (localStorage.getItem('books')) {
+      books = JSON.parse(localStorage.getItem('books'));
+      books.forEach((bookItem, pos) => {
+        UpdateDisplay.addBookItem(bookItem, pos);
+      });
+    } else {
+      localStorage.setItem('books', '');
+      books = [];
+    }
+  }
+
+  static addBookItem(bookItem, pos) {
+    const bookBlock = document.createElement('div');
+    bookBlock.classList.add('bookDIV');
+    bookBlock.id = pos;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-btn');
+
+    bookBlock.innerHTML = `
+      <p class='book-title'>'${bookItem.author}'  by ${bookItem.title} </p>`;
+
+    removeBtn.innerText = 'Remove';
+
+    removeBtn.onclick = () => {
+      UpdateDisplay.delBook(bookItem, pos);
+    };
+
+    bookBlock.appendChild(removeBtn);
+    UpdateDisplay.listSection.appendChild(bookBlock);
   }
 }
-theForm.addEventListener('submit', () => {
-  const newBook = new Book(bookTitle.value, bookAuthor.value);
-  newBook.addBook();
-  bookAuthor.value = '';
-  bookTitle.value = '';
-});
 
-Book.displayUI();
-
-const removeButton = document.querySelectorAll('.remove-btn');
-
-removeButton.forEach((item) => item.addEventListener('click', function () {
-  const deleteBook = new Book(bookTitle.value, bookAuthor.value, this.id);
-  deleteBook.removeBook();
-  Book.displayUI();
-}));
-
-const timeBox = document.querySelector('#date');
-
-function time() {
-  const date = new Date();
-  const locale = navigator.language;
-  const options = {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: 'false',
-  };
-  timeBox.textContent = `${date.toLocaleTimeString(locale, options)}`;
-}
-
-setInterval(time, 1000);
-
-listBtn.forEach((btn, i) => {
+UpdateDisplay.listBtn.forEach((btn, i) => {
   btn.onclick = () => {
-    listBtn.forEach((oldBtn) => {
+    UpdateDisplay.listBtn.forEach((oldBtn) => {
       oldBtn.classList.remove('active');
     });
     btn.classList.add('active');
-    addActive.forEach((sec, index) => {
+    UpdateDisplay.addActive.forEach((sec, index) => {
       if (i === index) {
         sec.classList.add('active');
       } else {
@@ -92,3 +91,6 @@ listBtn.forEach((btn, i) => {
     });
   };
 });
+
+UpdateDisplay.updateUi();
+UpdateDisplay.formBtn.addEventListener('click', UpdateDisplay.addBooks);
